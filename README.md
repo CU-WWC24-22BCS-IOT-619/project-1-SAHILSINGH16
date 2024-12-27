@@ -17,7 +17,6 @@ This is an AI-based livestock breeding optimization tool. It uses AI to recommen
 
 ## requirements.txt
 Purpose: A list of Python packages required to run your project. This file makes it easy to set up your project environment.
-Example:
 makefile
 Flask==2.0.3
 sqlite3
