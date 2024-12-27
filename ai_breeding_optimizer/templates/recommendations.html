@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>AI Breeding Recommendations</h2>
+
+<h3>All Livestock Data</h3>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Genetic Traits</th>
+        <th>Health Status</th>
+        <th>Productivity</th>
+        <th>Actions</th>
+    </tr>
+    {% for entry in data %}
+    <tr>
+        <td>{{ entry['name'] }}</td>
+        <td>{{ entry['genetic_traits'] }}</td>
+        <td>{{ entry['health_status'] }}</td>
+        <td>{{ entry['productivity'] }}</td>
+        <td>
+            <a href="/update/{{ entry['id'] }}">Update</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h3>Recommended Breeding Pairs</h3>
+{% if recommendations %}
+<ul>
+    {% for pair in recommendations %}
+        <li>
+            {{ pair[0]['name'] }} and {{ pair[1]['name'] }} (Matching Traits: {{ pair[0]['genetic_traits'] }})
+        </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No recommendations available. Please upload more data.</p>
+{% endif %}
+{% endblock %}

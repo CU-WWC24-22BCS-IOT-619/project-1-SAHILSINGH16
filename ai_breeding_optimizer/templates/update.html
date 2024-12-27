@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Update Livestock Data</h2>
+<form action="/update/{{ livestock['id'] }}" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{ livestock['name'] }}" required><br>
+
+    <label for="genetic_traits">Genetic Traits:</label>
+    <input type="text" id="genetic_traits" name="genetic_traits" value="{{ livestock['genetic_traits'] }}" required><br>
+
+    <label for="health_status">Health Status:</label>
+    <input type="text" id="health_status" name="health_status" value="{{ livestock['health_status'] }}" required><br>
+
+    <label for="productivity">Productivity:</label>
+    <input type="text" id="productivity" name="productivity" value="{{ livestock['productivity'] }}" required><br>
+
+    <button type="submit">Update</button>
+</form>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Upload Livestock Data</h2>
+<form action="/upload" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="genetic_traits">Genetic Traits:</label>
+    <input type="text" id="genetic_traits" name="genetic_traits" required><br>
+
+    <label for="health_status">Health Status:</label>
+    <input type="text" id="health_status" name="health_status" required><br>
+
+    <label for="productivity">Productivity:</label>
+    <input type="text" id="productivity" name="productivity" required><br>
+
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
